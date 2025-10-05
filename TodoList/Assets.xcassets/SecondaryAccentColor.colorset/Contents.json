@@ -6,6 +6,24 @@
         "reference" : "systemBlueColor"
       },
       "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "color" : {
+        "color-space" : "display-p3",
+        "components" : {
+          "alpha" : "1.000",
+          "blue" : "0.967",
+          "green" : "0.707",
+          "red" : "0.556"
+        }
+      },
+      "idiom" : "universal"
     }
   ],
   "info" : {
