@@ -8,11 +8,35 @@
 import SwiftUI
 
 struct ListView: View {
+    @State var items: [ItemModel] = [
+        ItemModel(title: "This is the first title", isCompleted: false),
+        ItemModel(title: "This is the second", isCompleted: true),
+        ItemModel(title: "Third", isCompleted: false)
+    ]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(items) { item in
+                ListRowView(item: item)
+            }
+        }.padding(.top, 8)
+        .listStyle(PlainListStyle())
+        .navigationTitle("Todo List 📝")
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                EditButton()
+            }
+            ToolbarItem(placement: .topBarTrailing) {
+                NavigationLink("Add") {
+                    AddView()
+                }
+            }
+        }
     }
 }
 
 #Preview {
-    ListView()
+    NavigationStack {
+        ListView()
+    }
 }
